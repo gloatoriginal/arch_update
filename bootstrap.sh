@@ -12,4 +12,3 @@ chmod +x ./arch_update/update.sh \
 
 echo "cronjobs have not been set and require YOU the user to set them up, but cronie is enable in your systemctl."
  
-v
