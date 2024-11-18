@@ -1,0 +1,13 @@
+[Unit]
+Description=Unload nvidia modesetting modules from kernel
+Documentation=man:modprobe(8)
+DefaultDependencies=no
+After=umount.target
+Before=kexec.target
+
+[Service]
+Type=oneshot
+ExecStart=modprobe -r nvidia_drm && rmmod -f nvidia*
+
+[Install]
+WantedBy=kexec.target
