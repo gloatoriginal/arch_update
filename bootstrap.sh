@@ -6,10 +6,11 @@ sudo pacman -S cronie kexec-tools flatpak \
         && sudo systemctl enable --now cronie
 
 git clone https://github.com/gloatoriginal/arch_update \ 
-        && chmod +x ./arch_update/update.sh \
-        && sudo cp ./arch_update/unmodeset.service /etc/systemd/system/ \
+        && chmod +x ./update.sh \
+        && sudo cp ./unmodeset.service /etc/systemd/system/ \
         && sudo systemctl enable unmodeset.service \
-        && sudo cp ./arch_update/kexec-load@.service /etc/systemd/system/ 
+        && sudo cp ./kexec-load@.service /etc/systemd/system/ 
 
 echo "cronjobs have not been set and require YOU the user to set them up, but cronie is enable in your systemctl."
  
+v
