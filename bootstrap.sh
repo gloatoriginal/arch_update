@@ -5,8 +5,7 @@ echo "Lets get sudo out of the way with a quick download of cronie, kexec and fl
 sudo pacman -S cronie kexec-tools flatpak \
         && sudo systemctl enable --now cronie
 
-git clone https://github.com/gloatoriginal/arch_update \ 
-        && chmod +x ./update.sh \
+chmod +x ./update.sh \
         && sudo cp ./unmodeset.service /etc/systemd/system/ \
         && sudo systemctl enable unmodeset.service \
         && sudo cp ./kexec-load@.service /etc/systemd/system/ 
