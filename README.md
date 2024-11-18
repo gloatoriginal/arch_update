@@ -5,11 +5,19 @@ This is for people that are lazy and like to have a system that lives on the tru
 Some basic instructions for anyone that wants that:
 copy the 3 files in some way, you can use git or just copy+paste.
 
-1. Set update.sh anywhere you like, preferably somewhere that is easy to type out. Allow execute with 
-  chmod +x /path/to/update.sh
+1. Set ``update.sh`` anywhere you like, preferably somewhere that is easy to type out. Allow execute with
+
+`chmod +x /path/to/update.sh`
+
 2. Install or use cronjob, on Arch I use Cronie, 
-  sudo pacman -S cronie && sudo systemctl enable --now cronie
-3. Setup a cronjob with, cronjob -e, use https://crontab.guru/ for help with timings
-4. copy kexec-load@.service and unmodeset.service to /etc/systemd/system/
-5. Enable unmodeset.service with
-  sudo systemctl enable unmodeset.service
+
+`sudo pacman -S cronie && sudo systemctl enable --now cronie`
+
+3. Use https://crontab.guru/ for help with timings setup a cronjob with 
+
+`crontab -e`
+
+4. copy `kexec-load@.service` and `unmodeset.service` to `/etc/systemd/system/`
+5. Enable `unmodeset.service` with
+
+`sudo systemctl enable unmodeset.service`
