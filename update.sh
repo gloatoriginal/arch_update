@@ -6,8 +6,8 @@ date
 pacman -Syu --noconfirm \
         && paccache -r -k 1 \
         && flatpak upgrade -y \
-        && grub-install \
-        && grub-mkconfig -o /boot/grub/grub.cfg 
+        ## && grub-install \
+        ## && grub-mkconfig -o /boot/grub/grub.cfg 
 
 # Grab "linux" from the OS
 k_name=$(uname -s | tr '[:upper:]' '[:lower:]')
