@@ -19,7 +19,7 @@ if ! [[ $k_ver =~ ^[0-9]+$ ]]; then k_name="$k_name-$k_ver"; fi
 
 
 if [[ $output =~ $k_name ]]; then
-        echo "Reboot" && sleep 5
+        echo "Reboot" && date && sleep 5
         shutdown -r now
 else
         echo "kexec into: $k_name" \
