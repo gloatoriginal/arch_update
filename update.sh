@@ -25,7 +25,7 @@ if [[ $output =~ $k_name ]]; then
 else
         echo "kexec into: $k_name" \
                 && date \
-                && sleep 5 \ 
+                && sleep 5 \
                 && systemctl start kexec-load@$k_name.service \
                 && systemctl start kexec.target
 fi
