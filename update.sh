@@ -3,13 +3,15 @@
 date
 
 # Update and upgrade packages with single command sequence
-output=$(pacman -Syu --noconfirm \
+pacman -Syu --noconfirm \
         && paccache -r -k 1 \
-        && flatpak upgrade -y)
-        #&& grub-install \
-        #&& grub-mkconfig -o /boot/grub/grub.cfg 
+        && flatpak upgrade -y \
+        &> temp_out.txt
 
+
+output=(cat temp_out.txt)
 echo $output
+rm temp_out.txt
 # Grab "linux" from the OS
 k_name=$(uname -s | tr '[:upper:]' '[:lower:]')
 
@@ -28,4 +30,3 @@ else
         systemctl start kexec-load@$k_name.service \
                 && systemctl start kexec.target
 fi
-
