@@ -9,7 +9,7 @@ pacman -Syu --noconfirm \
         &> temp_out.txt
 
 
-output=(cat temp_out.txt)
+output=$(cat temp_out.txt)
 echo $output
 rm temp_out.txt
 # Grab "linux" from the OS
