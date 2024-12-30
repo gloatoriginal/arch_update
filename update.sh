@@ -23,9 +23,9 @@ if [[ $output =~ $k_name ]]; then
                 && sleep 5 \
                 && shutdown -r now
 else
-        echo "kexec into: $k_name" \
+        echo "Soft-Reboot" \
                 && date \
                 && sleep 5 \
-                && systemctl start kexec-load@$k_name.service \
-                && systemctl start kexec.target
+                && systemctl soft-reboot
 fi
+ 
